@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+</head>
+<body>
+    <form action="submit.html" method="get" enctype="multipart/form-data"><!-- method : 'post' -->
+        <div>
+            <label for="username">User Name</label>
+            <input type="text" name="username" id="username" placeholder="username" value="raj" maxlength="5" required> <!-- size="5" -->
+        </div>
+        <div>
+            <label for="search">Search</label>
+            <input type="search" placeholder="search" name="search" id="search">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="password" minlength="8" required>
+        </div>
+        <div>
+            <label for="yearofbirth">Year of Birth</label>
+            <input type="number" name="yearofbirth" id="yearofbirth" maxlength="4" min="1900" max="2023" step="10">
+        </div>
+        <div>
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+        <div>
+            <label for="dateofbirth">Date of birth</label>
+            <input type="date" name="dateofbirth" id="dateofbirth" min="2023-12-01" max="2024-01-01">
+        </div>
+        <div>
+            <label for="url">URL text</label>
+            <input type="url" name="url" id="url">
+        </div>
+        <div>
+            <label for="about">About</label><br>
+            <textarea name="about" id="about" cols="20" rows="5"></textarea>
+        </div>
+        <div>
+            <input type="checkbox" name="emailalert" id="emailalert">
+            <label for="emailalert">Email Alert</label>
+        </div>
+        <div>
+            <input type="checkbox" name="smsalert" id="smsalert">
+            <label for="smsalert">SMS Alert</label>
+        </div>
+        <div>
+            <input type="radio" name="gender" id="female" value="female">
+            <label for="female">Female</label>
+        </div>
+        <div>
+            <input type="radio" name="gender" id="Male" value="male">
+            <label for="Male">Male</label>
+        </div>
+        <div>
+           <!--  <select name="state" id="state">
+                <option value="TN">Tamil Nadu</option>
+                <option value="AP" label="Anthra pradesh"></option>
+            </select> -->
+            <select name="state" id="state" multiple>
+                <option value="TN">Tamil Nadu</option>
+                <option value="AP" label="Anthra pradesh"></option>
+            </select>
+        </div>
+        <div>
+            <label for="phoneno">Phone No</label>
+            <input type="tel" id="phoneno" name="phoneno">
+        </div>
+        <div>
+            <label for="color">Color</label>
+            <input type="color" name="color" id="color">
+        </div>
+        <div>
+            <input type="hidden" name="hidden" id="hidden" value="hidden">
+        </div>
+        <div>
+            <label for="fileupload">Upload File</label>
+            <input type="file" name="fileupload" id="fileupload">
+        </div>
+       <!--  <button type="submit">Submit</button> -->
+       <input type="image" src="submit.png" width="60">
+        <button type="reset">Reset</button>
+        <!-- 
+            placeholder for input -- to specify the label name inside of input field
+
+            value -- to specify default name to input
+            
+            size -- to denote default size of input field not modern but old CSS 
+
+            maxlength and minlength -- specify how many max and min charaters should be inside the input field(min give validation)
+
+            required -- specify that this field is must and give validation for that
+
+            note : the data is sent to backend as name:value pairs where default value can be changed as we input in the field.
+
+            button type = reset -- reset the datas inputed inside the input field
+
+            note : password is visible in get method so secure datas should be in post which could make it invisible and create a dtabse record in the server same as uploading files
+
+            min and max for input type number -- specify maximum and minimum numbers to be entered which is a validation 
+
+            step = 10 -- it would reduce or increase that input field with 10
+
+            type="email" -- which could function as validation for email format 
+
+            type="date"-- which gives date picker 
+            min/max as mentioned above in date in the format of yyyy/mm/dd would give the minimum and maximum date 
+
+            type ="url" -- to validate url inside input field 
+
+            type="search" -- to specify the search bar 
+
+            radio button -- to group the radio button elements into one variable the name atribute is given with same name, while to attach the radio button vlaue with the name variable the value attribute should be given otherwise the value coming in url for radio buttons name attribute would be on or off.
+
+            multuple attribute in the select dropdown tag would enable to select multiple values with ctrl press
+
+            hidden -- to send some data  which is derived from inputed data of users from frontend to backend (when using javascript)
+
+            enctype="multipart/form-data" -- give this attribute and value for form tag when we use file uploads since file have large amount of data which can not be uploaded at one should be seperated into frames to upload.
+
+            inpiut type="image" src="image file location"--instead of submit button the image can be use which could function as submit button 
+         -->
+        <!-- div --all form group/parts should be under div tag -->
+
+        <!-- "for"(label) and "id"(input) - to identify respective label for the input field when we specify those things if we click the label immediately cursor appear on input field -->
+
+        <!-- type ="submit" -- which specify the button type if we do like this, once we click the enter form would be submitted -->
+
+        <!-- "type"--specify inputting Data type whether password or number or text /password would not reveal what we entered -->
+
+        <!-- action=""-- specify where to send submitting form details  -->
+
+        <!-- post/get -- specify what kind of server connection post menas create record of data in server while get means retreive tha data from server/submitted form using url which have submitted data with storing it respective variable names that are username and password which is called query string -->
+
+      <!--   <div>
+            <label for="username">User Name :
+                <input type="text" name="username" id="username">
+            </label>   
+        </div>
+        <div>
+            <label for="password">Password :
+                <input type="password" name="password" id="password">
+            </label>
+        </div>
+        <button type="submit">Submit</button> -->
+
+    </form>
+</body>
+</html>
